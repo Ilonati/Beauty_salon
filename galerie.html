@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Beauty Salon</title>
-        <link rel="stylesheet" href="/assets/css/accueil.css">
+        <title>Galerie – Beauty Salon</title>
+        <link rel="stylesheet" href="/assets/css/galerie.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
             rel="stylesheet">
@@ -13,12 +13,9 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Great+Vibes&display=swap"
             rel="stylesheet">
 
-
     </head>
 
     <body>
-
-
         <!-- HEADER -->
 
         <header class="header">
@@ -31,75 +28,65 @@
             <a href="galerie.html">Galerie</a>
             <a href="#">Certificats</a>
             <a href="price.html">Price</a>
-            <a href="#faqList">FAQ</a>
+            <a href="index.html#faqList">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <!-- HERO -->
-        <div class="page">
-            <section class="hero reveal">
-                <div class="hero-text">
-                    <h1>Bonjour et Bienvenue!</h1>
-                    <p>Je m’appeler Romanna. Je suis spécialiste en manucure et en maquillage permanent. Depuis
-                        plusieurs
-                        années, j’aide mes clientes à révéler leur beauté naturelle grâce à des techniques modernes et
-                        des
-                        produits de haute qualité.
-                        Avec moi, chaque détail compte pour créer un style raffiné et une confiance qui dure tous les
-                        jours.
-                    </p>
-                    <button class="btn"><a href="contact.html#contact-container">Contacte moi</a></button>
-                </div>
-                <div class="hero-img">
-                    <img src="images/presantation.png" alt="Romana">
-                </div>
-            </section>
 
-            <!-- SERVICES -->
-            <section id="services reveal" class="services">
-                <h2>Nos Services</h2>
-                <div class="service-cards">
-                    <div class="card">
-                        <img src="images/manicure.png" alt="Manicure">
-                        <div class="text-overlay">Manucure</div>
-
-                        <button class="btn">Plus</button>
+        <div class="gallery-columns">
+            <!-- MANUCURE -->
+            <div class="gallery-section">
+                <h2 class="accordion-title"> Manucure</h2>
+                <div class="accordion-content">
+                    <div class="gallery-grid">
+                        <img src="images/photos/556689703_2978585169009155_4048068345647133266_n.jpg" alt="Manicure">
+                        <img src="images/photos/557056526_2978585249009147_1277443316916822226_n.jpg" alt="Manicure">
+                        <img src="images/photos/557331301_2978585222342483_484792505246286554_n.jpg" alt="Manicure">
+                        <img src="images/photos/557499940_2981082175426121_4406574215701495312_n.jpg" alt="Manicure">
+                        <img src="images/photos/557621306_2981082145426124_777074427757754812_n.jpg" alt="Manicure">
+                        <img src="images//photos/557635998_2981082132092792_2734650090700406401_n.jpg" alt="Manicure">
 
                     </div>
-                    <div class="card">
-                        <img src="images/permanente.png" alt="Permanente">
-                        <div class="text-overlay">Permanente</div>
+                </div>
+            </div>
 
-                        <button class="btn">Plus</button>
-                    </div>
-                    <div class="card">
-                        <img src="images/formation.png" alt="Formation">
-                        <div class="text-overlay">Formation</div>
 
-                        <button class="btn">Plus</button>
+            <!-- PERMANENTE -->
+            <div class="gallery-section">
+                <h2 class="accordion-title">Maquillage Permanent</h2>
+                <div class="accordion-content">
+                    <div class="gallery-grid">
+                        <img src="images/photos/perm/550858672_18025273241724557_3623076758190830293_n.jpg"
+                            alt="Maquillage">
+                        <img src="images/photos/perm/554920101_2974919829375689_644065658115801041_n.jpg"
+                            alt="Maquillage">
+                        <img src="images/photos/perm/555696387_2975688912632114_4222405193681365325_n.jpg"
+                            alt="Maquillage">
+                        <img src="images/photos/perm/556098747_2975688909298781_6987618887231480448_n.jpg"
+                            alt="Maquillage">
                     </div>
                 </div>
-            </section>
+            </div>
+
+
+            <!-- FORMATION -->
+            <!-- <div class="gallery-section">
+        <h2 class="accordion-title">Formation</h2>
+        <div class="accordion-content">
+        <div class="gallery-grid">
+          <img src="images/formation1.jpg" alt="">
+          <img src="images/formation2.jpg" alt="">
+          <img src="images/formation3.jpg" alt="">
+        </div>
+        </div>
+      </div> -->
         </div>
 
-        <!-- REVIEWS -->
-        <section class="reviews reveal">
-            <h2>Avis des clients</h2>
-            <div class="review">
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-d8b6560d-89d1-4179-bd27-4a309d90b56d" data-elfsight-app-lazy></div>
-            </div>
 
-        </section>
-
-        <!-- FAQ -->
-
-        <section class="reveal">
-            <h1>FAQ</h1>
-            <div class="faq-container">
-                <div id="faqList"></div>
-            </div>
-        </section>
+        <!-- Модальное окно для просмотра фото -->
+        <div class="lightbox" id="lightbox">
+            <span class="close" id="lightbox-close">&times;</span>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        </div>
 
         <!-- FOOTER -->
         <footer class="footer">
@@ -139,9 +126,7 @@
             </div>
         </footer>
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
-
-        <script src="/assets/js/accueil.js"></script>
-
+        <script src="/assets/js/galerie.js"></script>
     </body>
 
 </html>

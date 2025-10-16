@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Beauty Salon</title>
-        <link rel="stylesheet" href="/assets/css/accueil.css">
+        <link rel="stylesheet" href="/assets/css/price.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
             rel="stylesheet">
@@ -31,73 +31,56 @@
             <a href="galerie.html">Galerie</a>
             <a href="#">Certificats</a>
             <a href="price.html">Price</a>
-            <a href="#faqList">FAQ</a>
+            <a href="index.html#faqList">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <!-- HERO -->
-        <div class="page">
-            <section class="hero reveal">
-                <div class="hero-text">
-                    <h1>Bonjour et Bienvenue!</h1>
-                    <p>Je m’appeler Romanna. Je suis spécialiste en manucure et en maquillage permanent. Depuis
-                        plusieurs
-                        années, j’aide mes clientes à révéler leur beauté naturelle grâce à des techniques modernes et
-                        des
-                        produits de haute qualité.
-                        Avec moi, chaque détail compte pour créer un style raffiné et une confiance qui dure tous les
-                        jours.
-                    </p>
-                    <button class="btn"><a href="contact.html#contact-container">Contacte moi</a></button>
-                </div>
-                <div class="hero-img">
-                    <img src="images/presantation.png" alt="Romana">
-                </div>
-            </section>
 
-            <!-- SERVICES -->
-            <section id="services reveal" class="services">
-                <h2>Nos Services</h2>
-                <div class="service-cards">
-                    <div class="card">
-                        <img src="images/manicure.png" alt="Manicure">
-                        <div class="text-overlay">Manucure</div>
+        <section class="price-section">
+            <h1 class="page-title">Prix</h1>
 
-                        <button class="btn">Plus</button>
-
-                    </div>
-                    <div class="card">
-                        <img src="images/permanente.png" alt="Permanente">
-                        <div class="text-overlay">Permanente</div>
-
-                        <button class="btn">Plus</button>
-                    </div>
-                    <div class="card">
-                        <img src="images/formation.png" alt="Formation">
-                        <div class="text-overlay">Formation</div>
-
-                        <button class="btn">Plus</button>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- REVIEWS -->
-        <section class="reviews reveal">
-            <h2>Avis des clients</h2>
-            <div class="review">
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-d8b6560d-89d1-4179-bd27-4a309d90b56d" data-elfsight-app-lazy></div>
+            <!-- SEMI PERMANENT -->
+            <div class="price-category">
+                <h2>SEMI PERMANENT</h2>
+                <ul>
+                    <li><span>Pose semi-permanent mains (dépose + manucure combiné + modélisation + couleur)</span>
+                        <span>1h30 – 30€</span>
+                    </li>
+                    <li><span>Dépose + pose semi-permanent mains (dépose + manucure combiné + modélisation +
+                            couleur)</span> <span>2h00 – 35€</span></li>
+                    <li><span>Dépose semi-permanent (gel simple)</span> <span>30–40min – 10€</span></li>
+                    <li><span>Dépose semi-permanent (gel avec soin)</span> <span>60min – 20€</span></li>
+                </ul>
             </div>
 
-        </section>
+            <!-- GEL / POLYGEL -->
+            <div class="price-category">
+                <h2>GEL, POLYGEL</h2>
+                <ul>
+                    <li><span>Pose gel sur les ongles naturels (pose + modélisation + couleur)</span> <span>1h30 –
+                            40€</span></li>
+                    <li><span>Dépose + pose gel sur les ongles naturels (pose + modélisation + couleur)</span>
+                        <span>2h00 – 45€</span>
+                    </li>
+                    <li><span>Changement de la couleur de gel</span> <span>— 5€</span></li>
+                </ul>
+            </div>
 
-        <!-- FAQ -->
+            <!-- EXTENSIONS -->
+            <div class="price-category">
+                <h2>EXTENSIONS D'ONGLES</h2>
+                <ul>
+                    <li><span>Extensions ongles en gel/polygel (taille S)</span> <span>2h00 – 55€</span></li>
+                    <li><span>Extensions ongles en gel/polygel (taille M)</span> <span>2h30 – 60€</span></li>
+                    <li><span>Extensions ongles en gel/polygel (taille L)</span> <span>3h00 – 65€</span></li>
+                </ul>
+            </div>
 
-        <section class="reveal">
-            <h1>FAQ</h1>
-            <div class="faq-container">
-                <div id="faqList"></div>
+            <!-- AUTRES -->
+            <div class="price-category">
+                <h2>NAIL ART</h2>
+                <ul>
+                    <li><span>French, Baby Boomers, Dessin</span> <span>5€</span></li>
+                </ul>
             </div>
         </section>
 
@@ -138,9 +121,10 @@
                 </div>
             </div>
         </footer>
+
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
 
-        <script src="/assets/js/accueil.js"></script>
+        <script src="/assets/js/price.js"></script>
 
     </body>
 

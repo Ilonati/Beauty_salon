@@ -1,3 +1,14 @@
+
+//clic header 
+const header = document.querySelector('.header');
+const burger = document.getElementById('burger');
+
+header.addEventListener('click', (e) => {
+
+    if (e.target === burger) return;
+    window.location.href = 'index.html';
+});
+
 // FAQ toggle
 const faqs = [
     {
@@ -75,10 +86,55 @@ faqs.forEach((faq) => {
 
 
 // Burger menu
-const burger = document.getElementById('burger');
-const nav = document.getElementById('nav');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
+
+
+const nav = document.getElementById("nav");
+const closeBtn = document.getElementById("close-btn");
+
+burger.addEventListener("click", () => {
+    nav.classList.add("active");
 });
+
+closeBtn.addEventListener("click", () => {
+    nav.classList.remove("active");
+});
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active');
+        }
+    }
+}
+
+//pour charger la page //
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+// === scroll ===
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+});
+
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+
 

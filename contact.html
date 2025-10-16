@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Beauty Salon</title>
-        <link rel="stylesheet" href="/assets/css/accueil.css">
+        <link rel="stylesheet" href="/assets/css/contact.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
             rel="stylesheet">
@@ -31,76 +31,33 @@
             <a href="galerie.html">Galerie</a>
             <a href="#">Certificats</a>
             <a href="price.html">Price</a>
-            <a href="#faqList">FAQ</a>
+            <a href="index.html#faqList">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <!-- HERO -->
-        <div class="page">
-            <section class="hero reveal">
-                <div class="hero-text">
-                    <h1>Bonjour et Bienvenue!</h1>
-                    <p>Je m’appeler Romanna. Je suis spécialiste en manucure et en maquillage permanent. Depuis
-                        plusieurs
-                        années, j’aide mes clientes à révéler leur beauté naturelle grâce à des techniques modernes et
-                        des
-                        produits de haute qualité.
-                        Avec moi, chaque détail compte pour créer un style raffiné et une confiance qui dure tous les
-                        jours.
-                    </p>
-                    <button class="btn"><a href="contact.html#contact-container">Contacte moi</a></button>
-                </div>
-                <div class="hero-img">
-                    <img src="images/presantation.png" alt="Romana">
-                </div>
-            </section>
 
-            <!-- SERVICES -->
-            <section id="services reveal" class="services">
-                <h2>Nos Services</h2>
-                <div class="service-cards">
-                    <div class="card">
-                        <img src="images/manicure.png" alt="Manicure">
-                        <div class="text-overlay">Manucure</div>
+        <!-- CONTACT FORM -->
+        <section class="contact-page">
+            <div class="contact-container">
+                <h1>Contactez-moi</h1>
+                <p>Remplissez le formulaire ci-dessous et je vous répondre rapidement.</p>
 
-                        <button class="btn">Plus</button>
+                <form action="send_form.php" method="POST" class="contact-form">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
 
-                    </div>
-                    <div class="card">
-                        <img src="images/permanente.png" alt="Permanente">
-                        <div class="text-overlay">Permanente</div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
 
-                        <button class="btn">Plus</button>
-                    </div>
-                    <div class="card">
-                        <img src="images/formation.png" alt="Formation">
-                        <div class="text-overlay">Formation</div>
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet du message">
 
-                        <button class="btn">Plus</button>
-                    </div>
-                </div>
-            </section>
-        </div>
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" placeholder="Votre message" rows="6" required></textarea>
 
-        <!-- REVIEWS -->
-        <section class="reviews reveal">
-            <h2>Avis des clients</h2>
-            <div class="review">
-                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-                <script src="https://elfsightcdn.com/platform.js" async></script>
-                <div class="elfsight-app-d8b6560d-89d1-4179-bd27-4a309d90b56d" data-elfsight-app-lazy></div>
-            </div>
-
-        </section>
-
-        <!-- FAQ -->
-
-        <section class="reveal">
-            <h1>FAQ</h1>
-            <div class="faq-container">
-                <div id="faqList"></div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
             </div>
         </section>
-
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
@@ -140,8 +97,7 @@
         </footer>
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
 
-        <script src="/assets/js/accueil.js"></script>
-
+        <script src="/assets/js/contact.js"></script>
     </body>
 
 </html>
