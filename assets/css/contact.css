@@ -1,3 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+
+h1,
+h2,
+h3,
+a {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+
 /* HEADER */
 
 .header {
@@ -82,14 +110,13 @@
 
 @media (max-width: 768px) {
     .nav {
-        position: fixed;
+        position: absolute;
         inset: 0;
         background: rgba(0, 0, 0, 0.9);
         display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 25px;
         backdrop-filter: none;
         border: none;
     }
@@ -122,7 +149,7 @@
     }
 
     .header {
-        height: 300px;
+        height: 260px;
         background-position: top;
     }
 
@@ -187,12 +214,7 @@ body {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
     padding: 40px;
     overflow: hidden;
-    /* max-width: 600px;
-    width: 100%;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+
 }
 
 .contact-container::before {
@@ -242,7 +264,8 @@ body {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 20px;
@@ -251,6 +274,8 @@ body {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
 }
+
+
 
 .contact-form button {
     width: 100%;
@@ -394,47 +419,8 @@ body {
     .service-cards {
         justify-content: center;
     }
-}
 
-/* Mobile */
-@media (max-width: 767px) {
-    .header {
-        flex-direction: column;
-        padding: 20px;
-    }
 
-    .nav {
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    .nav a {
-        margin: 5px 0;
-    }
-
-    .hero-text h1 {
-        font-size: 26px;
-    }
-
-    .hero-text p {
-        font-size: 14px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    .faq-question {
-        font-size: 14px;
-    }
-}
-
-.burger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
 }
 
 /* Mobile */
@@ -450,7 +436,7 @@ body {
         flex-direction: column;
         background: #000;
         position: absolute;
-        top: 70px;
+
         right: 0;
         width: 200px;
         padding: 20px;
@@ -511,7 +497,7 @@ body {
 @media (max-width: 768px) {
     #scrollTopBtn {
         bottom: 20px;
-        right: 60px;
+        right: 20px;
         width: 45px;
         height: 45px;
         font-size: 18px;

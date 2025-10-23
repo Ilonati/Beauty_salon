@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Beauty Salon</title>
-        <link rel="stylesheet" href="/assets/css/contact.css">
+        <link rel="stylesheet" href="/assets/css/manucure.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
             rel="stylesheet">
@@ -35,38 +35,62 @@
             <a href="contact.html#contact">Contact</a>
         </nav>
 
-        <!-- CONTACT FORM -->
-        <section class="contact-page">
-            <div class="contact-container">
-                <h1>Contactez-moi</h1>
-                <p>Remplissez le formulaire ci-dessous et je vous répondre rapidement.</p>
+        <!-- HERO -->
+        <div class="page">
+            <section class="manicure-hero">
+                <h1>Permanente</h1>
+                <p>Découvrez nos soins spécialisés : extension, renforcement et vernis classique — adaptés à vos besoins
+                    et
+                    réalisés avec soin et précision </p>
+            </section>
 
-                <form action="send_form.php" method="POST" class="contact-form" id="contact">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            <!-- VERTICAL COLUMNS -->
+            <section class="manicure-sections">
 
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-                    <label for="subject">Sujet :</label>
-                    <!-- <input type="text" id="subject" name="subject" placeholder="Sujet du message"> -->
-                    <select id="subject" name="subject" required>
-                        <option value="" disabled selected hidden>Sujet du message</option>
-                        <option value="manicure">Manucure</option>
-                        <option value="permanent">Permanente</option>
-                        <option value="courses">Formation</option>
-                    </select>
-
-
+                <div class="manicure-block">
+                    <img src="/images/permanente.png" alt="Extension des ongles">
+                    <div class="manicure-text">
+                        <h2> PERMANENTE ras de cils</h2>
+                        <p>Obtenez une longueur parfaite et une forme élégante grâce à la technique du
+                            <strong>gel</strong>
+                            ou de <strong>l’acrygel</strong>. Une solution idéale pour celles qui veulent des ongles
+                            solides, durables et raffinés.
+                        </p>
 
 
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" placeholder="Votre message" rows="6" required></textarea>
+                    </div>
+                </div>
 
-                    <button type="submit" class="btn">Envoyer</button>
-                </form>
-            </div>
-        </section>
+                <div class="manicure-block">
+                    <img src="/images/permanente.png" alt="Renforcement des ongles">
+                    <div class="manicure-text">
+                        <h2>PERMANENTE les sourcils</h2>
+                        <p>Renforcez vos ongles naturels avec un produit de protection transparent ou teinté. Ce soin
+                            prévient la casse et garde vos ongles forts et brillants tout en conservant un aspect
+                            naturel.
+                        </p>
+
+                    </div>
+                </div>
+
+                <div class="manicure-block">
+                    <img src="/images/permanente.png" alt="Vernis classique">
+                    <div class="manicure-text">
+                        <h2>PERMANENTE les lèvres</h2>
+                        <p>Pour un look soigné au quotidien — choisissez un vernis classique ou semi-permanent. Une
+                            touche
+                            de couleur pour révéler votre élégance naturelle </p>
+
+                    </div>
+                </div>
+
+            </section>
+            <section class="voir">
+                <h2> <a href="galerie.html#permanente">Voir la galerie</a></h2>
+                <h2><a href="price.html#price-category">Voir price</a></h2>
+            </section>
+        </div>
+
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
@@ -104,9 +128,9 @@
                 </div>
             </div>
         </footer>
-        <button id="scrollTopBtn" title="Remonter en haut">↑</button>
 
-        <script src="/assets/js/contact.js"></script>
+        <button id="scrollTopBtn" title="Remonter en haut">↑</button>
+        <script src="/assets/js/permanente.js"></script>
     </body>
 
 </html>

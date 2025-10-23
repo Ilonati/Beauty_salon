@@ -6,17 +6,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../img/price.jpg') center/cover no-repeat fixed;
-
-    color: #333333;
-    /* font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #9a2e32; */
-
+    background: #fff;
 }
 
 
@@ -34,16 +26,13 @@ a {
 }
 
 
-
-
-
 /* HEADER */
 
 .header {
     position: relative;
     width: 100%;
     height: 620px;
-    background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg ") center/cover no-repeat;
+    background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,174 +186,189 @@ a {
 }
 
 
+.page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #fffaf9;
 
-.gallery-section {
-    margin-bottom: 40px;
-    padding: 20px;
 }
 
-.gallery-section h2 {
+
+.page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 1100px;
+
+
+    background: url("/images/12.jpg") left / contain no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+
+    pointer-events: none;
+    z-index: 1;
+
+}
+
+
+.page>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+/* Заголовок страницы */
+.manicure-hero {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+
+.manicure-hero h1 {
     text-align: center;
     font-family: 'Great Vibes', cursive;
     font-size: 2.5rem;
     margin: 20px;
-    color: #f5d4eb;
+    color: #a22d5c;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+
+.manicure-hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #555;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+
+
+/* Вертикальные блоки */
+.manicure-sections {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
+
+
+.voir {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 10px;
+    text-align: center;
+
 }
 
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.voir a:hover {
+    background: #FF5A5F;
+    background: linear-gradient(90deg, rgba(255, 90, 95, 1) 0%, rgba(219, 144, 121, 1) 95%);
 }
 
-.lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
+.voir a {
+    color: #a22d5c;
 }
 
-.close {
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-/* Навигационные стрелки */
-.lightbox-prev,
-.lightbox-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    user-select: none;
-    transition: background 0.3s ease;
-}
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.lightbox-prev {
-    left: 40px;
-}
-
-.lightbox-next {
-    right: 40px;
-}
-
-/* Анимация появления фото */
-.lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease;
-}
-
-.lightbox-img:hover {
-    transform: scale(1.05);
-}
-
-/* * Аккордеон */
-.accordion-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 30px 0 10px;
-    cursor: pointer;
-    color: #c07fa5;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.accordion-title::after {
-    content: '+';
-    position: relative;
-    right: -10px;
-    font-size: 2rem;
-    transition: transform 0.3s ease;
-}
-
-.accordion-title.active::after {
-    content: '–';
-    transform: rotate(180deg);
-}
-
-.accordion-title:hover {
-    color: #e6b3d1;
-}
-
-/* Контент аккордеона */
-.accordion-content {
-    max-height: 0;
+.manicure-block {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    opacity: 0;
-    transition: all 0.6s ease;
-}
-
-.accordion-content.active {
-    max-height: 1000px;
-    /* достаточно для всех фото */
-    opacity: 1;
-}
-
-/* Сетка изображений */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 10px 0;
-}
-
-.gallery-grid img {
     width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
+.manicure-block:hover {
+    transform: translateY(-5px);
 }
 
-.accordion-content {
-    transition: max-height 0.6s ease, opacity 0.6s ease;
+.manicure-block img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
 }
 
+.manicure-text {
+    padding: 1.5rem;
+}
 
+.manicure-text h2 {
+    color: #a22d5c;
+    margin-bottom: 0.8rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.manicure-text p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.manicure-text .btn {
+    display: inline-block;
+    background-color: #a22d5c;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.manicure-text .btn:hover {
+    background-color: #c33d70;
+}
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 768px) {
+    .manicure-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .manicure-block img {
+        max-height: 220px;
+    }
+
+    .manicure-text {
+        padding: 1rem;
+    }
+
+    .manicure-sections {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        gap: 3rem;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+    }
+}
+
+/* === Анимация появления при скролле === */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* FOOTER */
 
@@ -459,6 +463,8 @@ a {
     padding: 0;
     margin: 0;
 }
+
+
 
 /*  RESPONSIVE DESIGN */
 

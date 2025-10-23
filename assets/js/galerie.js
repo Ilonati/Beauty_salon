@@ -1,13 +1,64 @@
+const header = document.querySelector('.header');
+const burger = document.getElementById('burger');
 
+header.addEventListener('click', (e) => {
+    // Если кликнули по бургеру — не переходим на главную
+    if (e.target === burger) return;
 
-document.querySelector('.header').addEventListener('click', () => {
+    // Иначе — переходим
     window.location.href = 'index.html';
 });
+// Burger menu
+
+
+
+const nav = document.getElementById("nav");
+const closeBtn = document.getElementById("close-btn");
+
+burger.addEventListener("click", () => {
+    nav.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+    nav.classList.remove("active");
+});
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active');
+        }
+    }
+}
+
+// === scroll ===
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+});
+
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Все изображения галереи
 const images = document.querySelectorAll('.gallery-grid img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.getElementById('lightbox-close');
+const lightboxCloseBtn = document.getElementById('lightbox-close');
 
 // Создаём стрелки
 const prevBtn = document.createElement('div');
@@ -34,7 +85,7 @@ images.forEach((img, index) => {
 });
 
 // Закрытие
-closeBtn.addEventListener('click', () => (lightbox.style.display = 'none'));
+lightboxCloseBtn.addEventListener('click', () => (lightbox.style.display = 'none'));
 lightbox.addEventListener('click', e => {
     if (e.target === lightbox) lightbox.style.display = 'none';
 });
@@ -89,21 +140,21 @@ if (firstTitle) {
 }
 
 // === scroll ===
-const scrollBtn = document.getElementById('scrollTopBtn');
+// const scrollBtn = document.getElementById('scrollTopBtn');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-        scrollBtn.classList.add('show');
-    } else {
-        scrollBtn.classList.remove('show');
-    }
-});
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 400) {
+//         scrollBtn.classList.add('show');
+//     } else {
+//         scrollBtn.classList.remove('show');
+//     }
+// });
 
-scrollBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+// scrollBtn.addEventListener('click', () => {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     });
+// });
 
 

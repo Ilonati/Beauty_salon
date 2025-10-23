@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Beauty Salon</title>
-        <link rel="stylesheet" href="/assets/css/contact.css">
+        <link rel="stylesheet" href="/assets/css/accueil.css">
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
             rel="stylesheet">
@@ -31,42 +31,12 @@
             <a href="galerie.html#manucure">Galerie</a>
             <a href="certificats.html">Certificats</a>
             <a href="price.html#price">Price</a>
-            <a href="index.html#faqList">FAQ</a>
+            <a href="#faqList">FAQ</a>
             <a href="contact.html#contact">Contact</a>
         </nav>
-
-        <!-- CONTACT FORM -->
-        <section class="contact-page">
-            <div class="contact-container">
-                <h1>Contactez-moi</h1>
-                <p>Remplissez le formulaire ci-dessous et je vous répondre rapidement.</p>
-
-                <form action="send_form.php" method="POST" class="contact-form" id="contact">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
-
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-                    <label for="subject">Sujet :</label>
-                    <!-- <input type="text" id="subject" name="subject" placeholder="Sujet du message"> -->
-                    <select id="subject" name="subject" required>
-                        <option value="" disabled selected hidden>Sujet du message</option>
-                        <option value="manicure">Manucure</option>
-                        <option value="permanent">Permanente</option>
-                        <option value="courses">Formation</option>
-                    </select>
-
-
-
-
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" placeholder="Votre message" rows="6" required></textarea>
-
-                    <button type="submit" class="btn">Envoyer</button>
-                </form>
-            </div>
-        </section>
+        <div class="page">
+            <h1>Certificats</h1>
+        </div>
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
@@ -106,7 +76,8 @@
         </footer>
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
 
-        <script src="/assets/js/contact.js"></script>
+        <script src="/assets/js/accueil.js"></script>
+
     </body>
 
 </html>
