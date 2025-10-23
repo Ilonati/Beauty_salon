@@ -6,14 +6,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../img/price.jpg') center/cover no-repeat fixed;
-
-    color: #333333;
-
-
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
 }
 
 
@@ -40,7 +35,7 @@ a {
     position: relative;
     width: 100%;
     height: 620px;
-    background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg ") center/cover no-repeat;
+    background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,175 +188,108 @@ a {
     transform: rotate(90deg);
 }
 
+.page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #fffaf9;
 
-
-.gallery-section {
-    margin-bottom: 40px;
-    padding: 20px;
 }
 
-.gallery-section h2 {
-    text-align: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    margin: 20px;
-    color: #f5d4eb;
+
+.page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+
+    background: url("/images/12.jpg") left / contain no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+
+    pointer-events: none;
+    z-index: 1;
+
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+.page>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+.certificat-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
     gap: 20px;
 }
 
-.gallery-grid img {
+.slide {
+    min-width: 70%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.slide img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Lightbox */
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-}
-
-.close {
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-/* Навигационные стрелки */
-.lightbox-prev,
-.lightbox-next {
+.arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3rem;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 2rem;
     cursor: pointer;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
     border-radius: 50%;
-    user-select: none;
     transition: background 0.3s ease;
 }
 
-.lightbox-prev:hover,
-.lightbox-next:hover {
-    background: rgba(0, 0, 0, 0.6);
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
 
-.lightbox-prev {
-    left: 40px;
+.arrow.prev {
+    left: 10px;
 }
 
-.lightbox-next {
-    right: 40px;
+.arrow.next {
+    right: 10px;
 }
 
-/* Анимация появления фото */
-.lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease;
+/* Для мобильных */
+@media (max-width: 600px) {
+    .slide {
+        min-width: 90%;
+    }
 }
-
-.lightbox-img:hover {
-    transform: scale(1.05);
-}
-
-/* * Аккордеон */
-.accordion-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 30px 0 10px;
-    cursor: pointer;
-    color: #c07fa5;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.accordion-title::after {
-    content: '+';
-    position: relative;
-    right: -10px;
-    font-size: 2rem;
-    transition: transform 0.3s ease;
-}
-
-.accordion-title.active::after {
-    content: '–';
-    transform: rotate(180deg);
-}
-
-.accordion-title:hover {
-    color: #e6b3d1;
-}
-
-/* Контент аккордеона */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.6s ease;
-}
-
-.accordion-content.active {
-    max-height: 1000px;
-    /* достаточно для всех фото */
-    opacity: 1;
-}
-
-/* Сетка изображений */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 10px 0;
-}
-
-.gallery-grid img {
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-.accordion-content {
-    transition: max-height 0.6s ease, opacity 0.6s ease;
-}
-
-
 
 /* FOOTER */
 
@@ -457,6 +385,8 @@ a {
     margin: 0;
 }
 
+
+
 /*  RESPONSIVE DESIGN */
 
 /* Tablet */
@@ -475,6 +405,7 @@ a {
         justify-content: center;
     }
 }
+
 
 /* Mobile */
 @media (max-width: 767px) {
@@ -519,7 +450,6 @@ a {
     right: 30px;
     z-index: 1000;
     background-color: #c07fa5;
-    /* розово-лиловый */
     color: white;
     border: none;
     border-radius: 50%;
@@ -550,7 +480,7 @@ a {
 @media (max-width: 768px) {
     #scrollTopBtn {
         bottom: 20px;
-        right: 20px;
+        right: 30px;
         width: 45px;
         height: 45px;
         font-size: 18px;
