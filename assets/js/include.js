@@ -1,4 +1,4 @@
-// Загружаем хедер и футер
+
 async function loadComponent(id, file) {
     const el = document.getElementById(id);
     if (el) {
@@ -8,6 +8,6 @@ async function loadComponent(id, file) {
     }
 }
 
-// Подключаем компоненты
+
 loadComponent("header-placeholder", "assets/components/header.html");
 loadComponent("footer-placeholder", "assets/components/footer.html");

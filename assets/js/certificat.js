@@ -3,10 +3,10 @@ const header = document.querySelector('.header');
 const burger = document.getElementById('burger');
 
 header.addEventListener('click', (e) => {
-    // Если кликнули по бургеру — не переходим на главную
+
     if (e.target === burger) return;
 
-    // Иначе — переходим
+
     window.location.href = 'index.html';
 });
 // Burger menu
@@ -37,7 +37,7 @@ function revealOnScroll() {
     }
 }
 
-// === scroll ===
+//  scroll 
 const scrollBtn = document.getElementById('scrollTopBtn');
 
 window.addEventListener('scroll', () => {
@@ -55,7 +55,7 @@ scrollBtn.addEventListener('click', () => {
     });
 });
 
-// --- Слайдер сертификатов ---
+// SLIDES
 const slides = document.querySelectorAll('.certificat-slider .slide');
 const prevBtn = document.querySelector('.certificat-slider .prev');
 const nextBtn = document.querySelector('.certificat-slider .next');
@@ -67,7 +67,7 @@ function updateSlides() {
         if (index === currentIndex) slide.classList.add('active');
     });
 
-    const offset = -currentIndex * (slides[0].offsetWidth + 5); // 20 = gap
+    const offset = -currentIndex * (slides[0].offsetWidth + 5);
     document.querySelector('.slider-container').style.transform = `translateX(${offset}px)`;
 }
 
@@ -81,5 +81,4 @@ prevBtn.addEventListener('click', () => {
     updateSlides();
 });
 
-// Инициализация
 updateSlides();

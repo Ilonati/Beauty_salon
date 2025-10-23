@@ -2,10 +2,10 @@ const header = document.querySelector('.header');
 const burger = document.getElementById('burger');
 
 header.addEventListener('click', (e) => {
-    // Если кликнули по бургеру — не переходим на главную
+
     if (e.target === burger) return;
 
-    // Иначе — переходим
+
     window.location.href = 'index.html';
 });
 // Burger menu
@@ -36,7 +36,7 @@ function revealOnScroll() {
     }
 }
 
-// === scroll ===
+// scroll 
 const scrollBtn = document.getElementById('scrollTopBtn');
 
 window.addEventListener('scroll', () => {

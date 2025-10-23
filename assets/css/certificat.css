@@ -284,7 +284,7 @@ a {
     right: 10px;
 }
 
-/* Для мобильных */
+
 @media (max-width: 600px) {
     .slide {
         min-width: 90%;
@@ -443,7 +443,7 @@ a {
     }
 }
 
-/* === Кнопка "наверх" === */
+/* SCROLL */
 #scrollTopBtn {
     position: fixed;
     bottom: 30px;
@@ -463,20 +463,20 @@ a {
     transition: opacity 0.4s ease, transform 0.3s ease;
 }
 
-/* Показываем при прокрутке */
+
 #scrollTopBtn.show {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
-/* Эффект при наведении */
+
 #scrollTopBtn:hover {
     background-color: #e6b3d1;
     transform: scale(1.1);
 }
 
-/*  Адаптация под мобильные устройства */
+
 @media (max-width: 768px) {
     #scrollTopBtn {
         bottom: 20px;

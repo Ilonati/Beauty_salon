@@ -253,7 +253,7 @@ a {
     cursor: pointer;
 }
 
-/* Навигационные стрелки */
+
 .lightbox-prev,
 .lightbox-next {
     position: absolute;
@@ -282,7 +282,7 @@ a {
     right: 40px;
 }
 
-/* Анимация появления фото */
+
 .lightbox-img {
     max-width: 90%;
     max-height: 80%;
@@ -295,7 +295,7 @@ a {
     transform: scale(1.05);
 }
 
-/* * Аккордеон */
+
 .accordion-title {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
@@ -324,7 +324,7 @@ a {
     color: #e6b3d1;
 }
 
-/* Контент аккордеона */
+
 .accordion-content {
     max-height: 0;
     overflow: hidden;
@@ -334,11 +334,10 @@ a {
 
 .accordion-content.active {
     max-height: 1000px;
-    /* достаточно для всех фото */
     opacity: 1;
 }
 
-/* Сетка изображений */
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -512,14 +511,13 @@ a {
     }
 }
 
-/* === Кнопка "наверх" === */
+/* SCROLL */
 #scrollTopBtn {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
     background-color: #c07fa5;
-    /* розово-лиловый */
     color: white;
     border: none;
     border-radius: 50%;
@@ -533,20 +531,20 @@ a {
     transition: opacity 0.4s ease, transform 0.3s ease;
 }
 
-/* Показываем при прокрутке */
+
 #scrollTopBtn.show {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
-/* Эффект при наведении */
+
 #scrollTopBtn:hover {
     background-color: #e6b3d1;
     transform: scale(1.1);
 }
 
-/*  Адаптация под мобильные устройства */
+
 @media (max-width: 768px) {
     #scrollTopBtn {
         bottom: 20px;

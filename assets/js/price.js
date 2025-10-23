@@ -38,7 +38,7 @@ function revealOnScroll() {
 
 
 
-// === scroll ===
+// scroll
 const scrollBtn = document.getElementById('scrollTopBtn');
 
 window.addEventListener('scroll', () => {
