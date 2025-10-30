@@ -330,7 +330,7 @@ a {
 
 .text-overlay {
     position: absolute;
-    top: 59%;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -420,7 +420,7 @@ h1 {
 
     &.open {
         color: white;
-        max-height: 200px;
+        max-height: max-content;
         padding: 15px 20px;
     }
 }
@@ -483,7 +483,7 @@ h1 {
 }
 
 .footer-box-left img {
-    width: 50%;
+    width: 30px;
 
 }
 
@@ -544,6 +544,38 @@ h1 {
 
 /* Tablet */
 @media (max-width: 1023px) {
+
+    .header {
+        height: 455px;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+
+        right: 0;
+        width: 300px;
+        padding: 20px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .nav a {
+        margin: 10px 0;
+        color: #fff;
+    }
+
+
+    .nav.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        color: #fff;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
@@ -563,6 +595,7 @@ h1 {
 /* Mobile */
 @media (max-width: 767px) {
     .header {
+        height: 250px;
         flex-direction: row;
         justify-content: space-between;
     }

@@ -330,8 +330,7 @@ a {
 }
 
 .footer-box-left img {
-    width: 50%;
-
+    width: 30px;
 }
 
 
@@ -391,6 +390,10 @@ a {
 
 /* Tablet */
 @media (max-width: 1023px) {
+    .header {
+        height: 455px;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
@@ -410,6 +413,7 @@ a {
 /* Mobile */
 @media (max-width: 767px) {
     .header {
+        height: 250px;
         flex-direction: row;
         justify-content: space-between;
     }

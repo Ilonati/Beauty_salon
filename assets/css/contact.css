@@ -246,7 +246,7 @@ body {
     font-family: 'Playfair Display', serif;
     text-align: center;
     margin-bottom: 20px;
-    color: #f5d4eb;
+    color: white;
 
 }
 
@@ -347,7 +347,7 @@ body {
 }
 
 .footer-box-left img {
-    width: 50%;
+    width: 30px;
 
 }
 
@@ -406,6 +406,10 @@ body {
 
 /* Tablet */
 @media (max-width: 1023px) {
+    .header {
+        height: 455px;
+    }
+
     .hero {
         flex-direction: column;
         text-align: center;
@@ -426,6 +430,7 @@ body {
 /* Mobile */
 @media (max-width: 767px) {
     .header {
+        height: 250px;
         flex-direction: row;
         justify-content: space-between;
     }
