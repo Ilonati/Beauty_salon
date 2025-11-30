@@ -82,3 +82,30 @@ scrollBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+        nom: e.target.nom.value,
+        prenom: e.target.prenom.value,
+        email: e.target.email.value,
+        telephone: e.target.telephone.value,
+        sujet: e.target.sujet.value,
+        message: e.target.message.value
+    };
+
+    const res = await fetch("https://beauty-backend.onrender.com/formulaireRoutes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+        alert("Message envoyé !");
+        e.target.reset();
+    } else {
+        alert("Erreur, réessayez.");
+    }
+});

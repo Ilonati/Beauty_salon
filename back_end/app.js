@@ -8,7 +8,7 @@ const app = express();
 const adminRoutes = require('./routes/adminRoutes');
 // const certificatRoutes = require('./routes/certificatRoutes');
 // const faqRoutes = require('./routes/faqRoutes');
-// const formulaireRoutes = require('./routes/formulaireRoutes');
+const formulaireRoutes = require('./routes/formulaireRoutes');
 const serviceRoutes = require('./routes/serviceRoutes');
 const typeServiceRoutes = require('./routes/typeServiceRoutes');
 
@@ -41,7 +41,7 @@ app.get('/api/test-db', async (req, res) => {
 app.use('/adminRoutes', adminRoutes);
 // app.use('/certificatRoutes', certificatRoutes);
 // app.use('/faqRoutes', faqRoutes);
-// app.use('/formulaireRoutes', formulaireRoutes);
+app.use('/formulaireRoutes', formulaireRoutes);
 app.use('/serviceRoutes', serviceRoutes);
 app.use('/typeServiceRoutes', typeServiceRoutes);
 
