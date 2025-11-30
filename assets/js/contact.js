@@ -82,6 +82,8 @@ scrollBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -94,11 +96,9 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
         message: e.target.message.value
     };
 
-    const res = await fetch("https://beauty-backend.onrender.com/formulaireRoutes", {
+    const res = await fetch("https://beauty-salon-9n0o.onrender.com/formulaireRoutes", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     });
 
@@ -109,3 +109,5 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
         alert("Erreur, réessayez.");
     }
 });
+
+
