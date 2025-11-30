@@ -8,20 +8,7 @@ header.addEventListener('click', (e) => {
 
     window.location.href = 'index.html';
 });
-// Burger menu
 
-
-
-const nav = document.getElementById("nav");
-const closeBtn = document.getElementById("close-btn");
-
-burger.addEventListener("click", () => {
-    nav.classList.add("active");
-});
-
-closeBtn.addEventListener("click", () => {
-    nav.classList.remove("active");
-});
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');
 
@@ -60,6 +47,22 @@ function changeLang(lang) {
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.translate-widget')) {
         menu.classList.add('hidden');
+    }
+});
+// Burger menu
+
+const nav = document.getElementById('nav');
+
+burger.addEventListener('click', () => {
+
+
+    nav.classList.toggle('active');
+
+
+    if (nav.classList.contains('active')) {
+        burger.textContent = "✖";
+    } else {
+        burger.textContent = "☰";
     }
 });
 // scroll 

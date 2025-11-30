@@ -104,23 +104,23 @@ a {
 }
 
 /* === BURGER === */
+
+
 .burger {
     position: absolute;
     top: 20px;
-    left: 25px;
+    left: 20px;
     font-size: 32px;
     color: white;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 2000;
     display: none;
 }
-
 
 @media (max-width: 768px) {
     .burger {
         display: block;
     }
-
 }
 
 
@@ -129,12 +129,16 @@ a {
         position: fixed;
         top: 0;
         left: 0;
-        width: 260px;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
+        width: 200px;
+        height: 90vh;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
-        padding-top: 80px;
+        padding: 20px 20px;
+
+        padding-top: 5px;
+
         gap: 25px;
         z-index: 1500;
     }
@@ -143,28 +147,22 @@ a {
         display: flex;
     }
 
+
+    .nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        color: white;
+        cursor: pointer;
+    }
+
     .nav a {
         font-size: 1.5rem;
         color: white;
         text-align: center;
     }
 }
-
-
-@media (min-width: 769px) {
-    .nav {
-        position: relative;
-        display: flex;
-        justify-content: flex-end;
-        gap: 30px;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 10px 20px;
-        border-radius: 12px;
-    }
-}
-
-
-
 
 
 /* HERO */
@@ -530,32 +528,7 @@ h1 {
         object-fit: contain;
     }
 
-    .nav {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute;
 
-        right: 0;
-        width: 300px;
-        padding: 20px;
-        border-radius: 0 0 8px 8px;
-    }
-
-    .nav a {
-        margin: 10px 0;
-        color: #fff;
-    }
-
-
-    .nav.active {
-        display: flex;
-    }
-
-    .burger {
-        display: block;
-        color: #fff;
-    }
 
     .hero {
         flex-direction: column;
@@ -576,41 +549,15 @@ h1 {
 /* Mobile */
 @media (max-width: 767px) {
     .header {
-        background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg") center/cover no-repeat;
-        height: 250px;
+        background: url("/images/head.jpeg") center/cover no-repeat;
+        height: 150px;
         flex-direction: row;
         justify-content: space-between;
     }
-
-
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute;
-
-        right: 0;
-        width: 200px;
-        padding: 20px;
-        border-radius: 0 0 8px 8px;
-    }
-
-    .nav a {
-        margin: 10px 0;
-        color: #fff;
-    }
-
-
-    .nav.active {
-        display: flex;
-    }
-
-    .burger {
-        display: block;
-        color: #fff;
-    }
 }
+
+
+
 
 
 /* SCROLL */

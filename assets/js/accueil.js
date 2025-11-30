@@ -113,7 +113,11 @@ faqs.forEach((faq) => {
 
 // Burger menu
 
+const nav = document.getElementById('nav');
+
 burger.addEventListener('click', () => {
+
+
     nav.classList.toggle('active');
 
 
@@ -123,7 +127,6 @@ burger.addEventListener('click', () => {
         burger.textContent = "☰";
     }
 });
-
 
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');

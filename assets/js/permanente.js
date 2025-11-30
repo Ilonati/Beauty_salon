@@ -10,17 +10,19 @@ header.addEventListener('click', (e) => {
 });
 // Burger menu
 
+const nav = document.getElementById('nav');
+
+burger.addEventListener('click', () => {
 
 
-const nav = document.getElementById("nav");
-const closeBtn = document.getElementById("close-btn");
+    nav.classList.toggle('active');
 
-burger.addEventListener("click", () => {
-    nav.classList.add("active");
-});
 
-closeBtn.addEventListener("click", () => {
-    nav.classList.remove("active");
+    if (nav.classList.contains('active')) {
+        burger.textContent = "✖";
+    } else {
+        burger.textContent = "☰";
+    }
 });
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');

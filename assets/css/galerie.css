@@ -109,97 +109,67 @@ a {
 }
 
 /* === BURGER === */
+
+
 .burger {
     position: absolute;
     top: 20px;
-    left: 25px;
+    left: 20px;
     font-size: 32px;
     color: white;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 2000;
     display: none;
 }
 
-
-
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+}
 
 
 @media (max-width: 768px) {
     .nav {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 90vh;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
         display: none;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: none;
-        border: none;
+        padding: 20px 20px;
+
+        padding-top: 5px;
+
+        gap: 25px;
+        z-index: 1500;
     }
 
     .nav.active {
         display: flex;
-        animation: fadeIn 0.3s ease forwards;
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
 
-        to {
-            opacity: 1;
-        }
+    .nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        color: white;
+        cursor: pointer;
     }
 
     .nav a {
         font-size: 1.5rem;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .close-btn {
-        display: block;
-    }
-
-    .header {
-        height: 260px;
-        background-position: top;
-    }
-
-    .header-overlay h1 {
-        font-size: 2rem;
-    }
-
-    .header-overlay p {
-        font-size: 1rem;
+        color: white;
+        text-align: center;
     }
 }
 
 
-.close-btn {
-    display: none;
-
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 36px;
-    color: white;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-@media (max-width: 768px) {
-    .close-btn {
-        display: block;
-    }
-}
-
-.close-btn:hover {
-    transform: rotate(90deg);
-}
 
 
 
@@ -487,46 +457,20 @@ a {
     }
 }
 
-/* Mobile */
+
 /* Mobile */
 @media (max-width: 767px) {
     .header {
-        background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg") center/cover no-repeat;
-        height: 250px;
+        background: url("/images/head.jpeg") center/cover no-repeat;
+        height: 150px;
         flex-direction: row;
         justify-content: space-between;
     }
-
-
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute;
-
-        right: 0;
-        width: 200px;
-        padding: 20px;
-        border-radius: 0 0 8px 8px;
-    }
-
-    .nav a {
-        margin: 10px 0;
-        color: #fff;
-    }
-
-
-    .nav.active {
-        display: flex;
-    }
-
-
-    .burger {
-        display: block;
-        color: #fff;
-    }
 }
+
+
+
+
 
 /* SCROLL */
 #scrollTopBtn {
