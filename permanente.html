@@ -22,6 +22,7 @@
         <!-- HEADER -->
 
         <header class="header">
+            <!-- <img src="/images/En-tête (1).jpg" alt="Romana"> -->
             <div class="burger" id="burger">☰</div>
         </header>
         <nav class="nav" id="nav">
@@ -32,14 +33,25 @@
             <a href="certificats.html">Certificats</a>
             <a href="price.html#price">Price</a>
             <a href="index.html#faqList">FAQ</a>
-            <a href="contact.html#contact">Contact</a>
+            <a href="contact.html#h1">Contact</a>
         </nav>
+        <div class="translate-widget">
+            <button id="translateBtn">🌍 <strong>Langues</strong></button>
+            <div id="translateMenu" class="hidden">
+                <a href="#" onclick="changeLang('fr')">🇫🇷 Français</a>
+                <a href="#" onclick="changeLang('en')">🇬🇧 English</a>
+                <a href="#" onclick="changeLang('uk')">🇺🇦 Українська</a>
+                <a href="#" onclick="changeLang('ru')">🇷🇺 Русский</a>
+            </div>
+        </div>
 
+        <div id="google_translate_element" style="display:none;"></div>
 
         <div class="page">
             <section class="manicure-hero">
                 <h1>Maquillage Permanent</h1>
-                <p>Il s'agit d'une technique moderne de maquillage permanent qui consiste à injecter des pigments dans
+                <p>Il s'agit d'une technique moderne de <strong>maquillage permanent</strong> qui consiste à injecter
+                    des pigments dans
                     les couches supérieures de l'épiderme. Elle permet de sublimer la beauté naturelle de votre visage,
                     en rendant vos sourcils, vos lèvres et vos yeux plus expressifs, tout en conservant un aspect
                     naturel. L'effet dure de 1 à 3 ans et ne nécessite pas de maquillage quotidien. </p>
@@ -54,7 +66,8 @@
                         <!-- <h2> PERMANENT ras de cils</h2> -->
                         <p><strong>Qu’est-ce que le maquillage permanent des yeux ?</strong></p>
 
-                        <p>Le maquillage permanent des yeux permet de souligner le regard de manière naturelle ou plus
+                        <p><strong>Le maquillage permanent des yeux</strong> permet de souligner le regard de manière
+                            naturelle ou plus
                             intense. Il est possible de réaliser un simple ras-de-cils, appelé trait interciliaire, qui
                             donne l’illusion de cils plus fournis. Pour un effet plus maquillé et élégant, une ligne
                             ras-de-cils avec effet poudré peut être réalisée. La tenue moyenne est de 3 à 4 ans
@@ -71,7 +84,8 @@
                         <p><strong>Qu’est-ce que le maquillage permanent des sourcils en technique “poudré” ?</strong>
                         </p>
 
-                        <p> Le maquillage permanent des sourcils en technique poudre, aussi appelé « powder brows » ou «
+                        <p> <strong>Le maquillage permanent des sourcils</strong> en technique poudre, aussi appelé «
+                            powder brows » ou «
                             shading », consiste à créer un effet ombré doux et naturel grâce à de fines pigmentations.
                             Cette méthode donne l’illusion de sourcils maquillés au crayon ou à l’ombre à paupières,
                             avec un résultat structuré et élégant. La tenue moyenne est de 2 à 3 ans.
@@ -86,7 +100,8 @@
                         <!-- <h2>PERMANENT les lèvres</h2> -->
                         <p><strong>Qu’est-ce que le maquillage permanent des lèvres ?</strong></p>
 
-                        <p>Le maquillage permanent des lèvres permet de sublimer leur forme, leur couleur et leur
+                        <p><strong>Le maquillage permanent des lèvres</strong> permet de sublimer leur forme, leur
+                            couleur et leur
                             contour de manière durable. J’utilise différentes techniques selon le résultat souhaité : un
                             effet léger et translucide de type « aquarelle » pour un rendu naturel, ou une pigmentation
                             plus intense en technique « rouge à lèvres » pour un effet maquillé et sophistiqué. La tenue
@@ -98,8 +113,8 @@
             </section>
 
             <section class="manicure-hero">
-                <h2>Quelles sont les contre-indications à la procédure de maquillage permanent ?</h2>
-                <p>Contre-indications au maquillage permanent
+                <h2>Quelles sont les contre-indications à la procédure de <strong>maquillage permanent</strong> ?</h2>
+                <p>Contre-indications au <strong>maquillage permanent</strong>
 
                     Afin de garantir votre sécurité et d’assurer un résultat optimal, certaines conditions de santé
                     peuvent empêcher la réalisation d’un maquillage permanent. Merci de lire attentivement les points
@@ -184,6 +199,7 @@
 
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
         <script src="/assets/js/permanente.js"></script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 
 </html>

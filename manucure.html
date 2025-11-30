@@ -22,6 +22,7 @@
         <!-- HEADER -->
 
         <header class="header">
+            <!-- <img src="/images/En-tête (1).jpg" alt="Romana"> -->
             <div class="burger" id="burger">☰</div>
         </header>
         <nav class="nav" id="nav">
@@ -31,20 +32,33 @@
             <a href="galerie.html#manucure">Galerie</a>
             <a href="certificats.html">Certificats</a>
             <a href="price.html#price">Price</a>
-            <a href="index.html#faqLists">FAQ</a>
-            <a href="contact.html#contact">Contact</a>
+            <a href="index.html#faqList">FAQ</a>
+            <a href="contact.html#h1">Contact</a>
         </nav>
+        <div class="translate-widget">
+            <button id="translateBtn">🌍 <strong>Langues</strong></button>
+            <div id="translateMenu" class="hidden">
+                <a href="#" onclick="changeLang('fr')">🇫🇷 Français</a>
+                <a href="#" onclick="changeLang('en')">🇬🇧 English</a>
+                <a href="#" onclick="changeLang('uk')">🇺🇦 Українська</a>
+                <a href="#" onclick="changeLang('ru')">🇷🇺 Русский</a>
+            </div>
+        </div>
+
+        <div id="google_translate_element" style="display:none;"></div>
 
         <div class="page">
             <section class="manicure-hero">
-                <h1>Manucure Professionnelle</h1>
+                <h1><strong>Manucure Professionnelle</strong></h1>
                 <p>Ma technique est unique et exclusive
                     La méthode que j’utilise est une technique auteur, développée au fil de plusieurs années
-                    d’expérience dans le domaine du manucure.
+                    d’expérience dans le domaine du <strong>manucure</strong>.
                     Après avoir testé et perfectionné différentes approches, j’ai créé ma propre méthode
                     professionnelle, qui garantit :</p>
 
-                <p> ☑️une tenue longue durée du semi-permanent ou du gel,polygel,</p>
+                <p> ☑️une tenue longue durée du <strong>semi-permanent</strong> ou du
+                    <strong>gel</strong>,<strong>polygel</strong>,
+                </p>
                 <p> ☑️un manucure parfaitement propre et soigné,</p>
                 <p> ☑️un résultat esthétique, précis et durable.</p>
 
@@ -60,7 +74,8 @@
                     <div class="manicure-text">
                         <h2>SEMI-PERMANENT</h2>
                         <p><strong>Pour qui convient semi -permanent ?</strong></p>
-                        <p> Le demi-permanent est idéal pour celles et ceux qui souhaitent des ongles soignés et
+                        <p> Le <strong>demi-permanent</strong> est idéal pour celles et ceux qui souhaitent des ongles
+                            soignés et
                             élégants tout en restant naturels.
                             Il convient parfaitement aux ongles naturels, sains et courts.
                             Sa tenue est de 2 à 3 semaines, offrant un éclat durable sans s’écailler.
@@ -72,7 +87,7 @@
                         <ul>•l’application de la couleur.</ul>
 
                         <p> 🎨 Le design est disponible en supplément.</p>
-                        <p> ☑️La dépose du semi-permanent est également facturée séparément.
+                        <p> ☑️La dépose du <strong>semi-permanent</strong> est également facturée séparément.
                         </p>
 
 
@@ -83,8 +98,9 @@
                     <img src="/images/Extension.jfif" alt="Renforcement des ongles">
                     <div class="manicure-text">
                         <h2>EXTENSIONS D'ONGLES</h2>
-                        <p><strong>Pour qui convient la pose d’ongles (extensions en gel ou en polygel ?</strong></p>
-                        <p> La pose d’ongles est idéale pour celles et ceux qui souhaitent allonger leurs ongles de
+                        <p><strong>Pour qui convient la pose d’ongles (extensions en gel ou en polygel) ?</strong></p>
+                        <p> <strong>La pose d’ongles</strong> est idéale pour celles et ceux qui souhaitent allonger
+                            leurs ongles de
                             manière immédiate, même en cas d’ongles naturels très courts, rongés ou fragiles.
                             Cette technique permet d’obtenir une longueur et une forme personnalisées (amande, carré,
                             ballerine, stiletto, etc.), tout en garantissant solidité et élégance.
@@ -92,7 +108,8 @@
                             Une retouche est recommandée au maximum après 4 semaines pour préserver une apparence
                             soignée et éviter tout soulèvement.
 
-                            ✨ La pose d’ongles est parfaite pour celles qui souhaitent un résultat visible rapidement,
+                            ✨ <strong>La pose d’ongles</strong> est parfaite pour celles qui souhaitent un résultat
+                            visible rapidement,
                             durable et adapté à un style naturel ou glamour. Elle permet d’avoir des mains impeccables
                             en toutes circonstances.</p>
 
@@ -122,7 +139,8 @@
                             Une correction est recommandée au maximum après 4 semaines pour conserver une apparence
                             impeccable.
 
-                            ✨ Les ongles en gel offrent robustesse, brillance et liberté totale en matière de forme
+                            ✨ <strong>Les ongles en gel</strong> offrent robustesse, brillance et liberté totale en
+                            matière de forme
                             (carrée, amande, ballerine, etc.) et de style. C’est la solution idéale pour celles qui
                             veulent des ongles spectaculaires et durables.</p>
 
@@ -186,6 +204,7 @@
 
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
         <script src="/assets/js/price.js"></script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 
 </html>

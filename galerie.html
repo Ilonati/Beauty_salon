@@ -19,6 +19,7 @@
         <!-- HEADER -->
 
         <header class="header">
+            <!-- <img src="/images/En-tête (1).jpg" alt="Romana"> -->
             <div class="burger" id="burger">☰</div>
         </header>
         <nav class="nav" id="nav">
@@ -29,9 +30,19 @@
             <a href="certificats.html">Certificats</a>
             <a href="price.html#price">Price</a>
             <a href="index.html#faqList">FAQ</a>
-            <a href="contact.html#contact">Contact</a>
+            <a href="contact.html#h1">Contact</a>
         </nav>
+        <div class="translate-widget">
+            <button id="translateBtn">🌍 <strong>Langues</strong></button>
+            <div id="translateMenu" class="hidden">
+                <a href="#" onclick="changeLang('fr')">🇫🇷 Français</a>
+                <a href="#" onclick="changeLang('en')">🇬🇧 English</a>
+                <a href="#" onclick="changeLang('uk')">🇺🇦 Українська</a>
+                <a href="#" onclick="changeLang('ru')">🇷🇺 Русский</a>
+            </div>
+        </div>
 
+        <div id="google_translate_element" style="display:none;"></div>
         <div class="gallery-columns">
             <!-- MANUCURE -->
             <div class="gallery-section" id="manucure">
@@ -55,14 +66,15 @@
                 <h2 class="accordion-title">Maquillage Permanente </h2>
                 <div class="accordion-content">
                     <div class="gallery-grid">
-                        <img src="images/photos/perm/550858672_18025273241724557_3623076758190830293_n.jpg"
-                            alt="Maquillage">
-                        <img src="images/photos/perm/554920101_2974919829375689_644065658115801041_n.jpg"
-                            alt="Maquillage">
-                        <img src="images/photos/perm/555696387_2975688912632114_4222405193681365325_n.jpg"
-                            alt="Maquillage">
-                        <img src="images/photos/perm/556098747_2975688909298781_6987618887231480448_n.jpg"
-                            alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.08.51.jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.17.41 (1).jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.13.11.jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.13.12 (1).jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.13.11 (1).jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.13.12.jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.17.41 (2).jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.17.41 (3).jpeg" alt="Maquillage">
+                        <img src="images/photos/perm/WhatsApp Image 2025-10-26 at 10.17.41.jpeg" alt="Maquillage">
                     </div>
                 </div>
             </div>
@@ -129,6 +141,7 @@
         </footer>
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
         <script src="/assets/js/galerie.js"></script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 
 </html>

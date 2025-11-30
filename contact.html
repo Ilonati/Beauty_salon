@@ -22,6 +22,7 @@
         <!-- HEADER -->
 
         <header class="header">
+            <!-- <img src="/images/En-tête (1).jpg" alt="Romana"> -->
             <div class="burger" id="burger">☰</div>
         </header>
         <nav class="nav" id="nav">
@@ -32,13 +33,29 @@
             <a href="certificats.html">Certificats</a>
             <a href="price.html#price">Price</a>
             <a href="index.html#faqList">FAQ</a>
-            <a href="contact.html#contact">Contact</a>
+            <a href="contact.html#h1">Contact</a>
         </nav>
+        <div class="translate-widget">
+            <button id="translateBtn">🌍 <strong>Langues</strong></button>
+            <div id="translateMenu" class="hidden">
+                <a href="#" onclick="changeLang('fr')">🇫🇷 Français</a>
+                <a href="#" onclick="changeLang('en')">🇬🇧 English</a>
+                <a href="#" onclick="changeLang('uk')">🇺🇦 Українська</a>
+                <a href="#" onclick="changeLang('ru')">🇷🇺 Русский</a>
+            </div>
+        </div>
+
+        <div id="google_translate_element" style="display:none;"></div>
 
         <!-- CONTACT FORM -->
+
         <section class="contact-page">
             <div class="contact-container">
-                <h1>Contactez-moi</h1>
+                <h1>Contactez-moi <a href="https://wa.me/33786606313" title="Whatsapp" target="_blank">
+                        <img src="/images/free-icon-logo-15713434.png" alt="Whatsapp">
+                    </a></h1>
+
+                <h2>Ou</h2>
                 <p>Remplissez le formulaire ci-dessous et je vous répondre rapidement.</p>
 
                 <form action="send_form.php" method="POST" class="contact-form" id="contact">
@@ -110,6 +127,7 @@
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
 
         <script src="/assets/js/contact.js"></script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 
 </html>

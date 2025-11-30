@@ -35,7 +35,33 @@ function revealOnScroll() {
         }
     }
 }
+/* translateMenu */
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'fr'
+    }, 'google_translate_element');
+}
+const btn = document.getElementById('translateBtn');
+const menu = document.getElementById('translateMenu');
 
+btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
+function changeLang(lang) {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+    }
+    menu.classList.add('hidden');
+}
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.translate-widget')) {
+        menu.classList.add('hidden');
+    }
+});
 // === scroll ===
 const scrollBtn = document.getElementById('scrollTopBtn');
 

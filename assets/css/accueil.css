@@ -8,7 +8,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
-    background: #fff;
+    background: white;
 }
 
 
@@ -32,28 +32,36 @@ a {
 /* HEADER */
 
 .header {
-    position: relative;
-    width: 100%;
-    height: 620px;
-    background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg") center/cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: url("/images/En-tête\ \(1\).jpg");
+    justify-content: flex-end;
     color: white;
     overflow: hidden;
+
 }
 
+.header img {
+    height: 100%;
+    max-height: 350px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+
 .nav {
-    position: absolute;
-    bottom: 20px;
-
-    right: 40px;
-
+    position: relative;
+    bottom: 40px;
+    right: 10px;
     display: flex;
     justify-content: flex-end;
     gap: 30px;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -543,10 +551,13 @@ h1 {
 /*  RESPONSIVE DESIGN */
 
 /* Tablet */
-@media (max-width: 1023px) {
+@media (max-width: 950px) {
 
-    .header {
-        height: 455px;
+    .header img {
+        height: 100%;
+        max-height: 350px;
+        width: auto;
+        object-fit: contain;
     }
 
     .nav {
@@ -595,10 +606,12 @@ h1 {
 /* Mobile */
 @media (max-width: 767px) {
     .header {
+        background: url("/images/WhatsApp\ Image\ 2025-10-03\ at\ 14.13.57.jpeg") center/cover no-repeat;
         height: 250px;
         flex-direction: row;
         justify-content: space-between;
     }
+
 
 
     .nav {
@@ -630,13 +643,13 @@ h1 {
 }
 
 
+/* SCROLL */
 #scrollTopBtn {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 200px;
     z-index: 1000;
-    background-color: #c07fa5;
-    color: white;
+    background-color: gray;
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -658,7 +671,7 @@ h1 {
 
 
 #scrollTopBtn:hover {
-    background-color: #e6b3d1;
+    background-color: #FF5A5F;
     transform: scale(1.1);
 }
 
@@ -666,9 +679,74 @@ h1 {
 @media (max-width: 768px) {
     #scrollTopBtn {
         bottom: 20px;
-        right: 90px;
+        right: 250px;
         width: 45px;
         height: 45px;
         font-size: 18px;
+    }
+}
+
+/* translateMenu */
+.translate-widget {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    z-index: 9999;
+    font-family: 'Playfair Display', serif;
+}
+
+#translateBtn {
+    background: black;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#translateBtn:hover {
+    background: #FF5A5F;
+}
+
+#translateMenu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+#translateMenu a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#translateMenu a:hover {
+    background: #f5f5f5;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .translate-widget {
+        left: auto;
+        right: 20px;
+    }
+
+    #translateMenu {
+        left: auto;
+        right: 0;
     }
 }

@@ -22,6 +22,7 @@
         <!-- HEADER -->
 
         <header class="header">
+            <!-- <img src="/images/En-tête (1).jpg" alt="Romana"> -->
             <div class="burger" id="burger">☰</div>
         </header>
         <nav class="nav" id="nav">
@@ -32,9 +33,19 @@
             <a href="certificats.html">Certificats</a>
             <a href="price.html#price">Price</a>
             <a href="index.html#faqList">FAQ</a>
-            <a href="contact.html#contact">Contact</a>
+            <a href="contact.html#h1">Contact</a>
         </nav>
+        <div class="translate-widget">
+            <button id="translateBtn">🌍 <strong>Langues</strong></button>
+            <div id="translateMenu" class="hidden">
+                <a href="#" onclick="changeLang('fr')">🇫🇷 Français</a>
+                <a href="#" onclick="changeLang('en')">🇬🇧 English</a>
+                <a href="#" onclick="changeLang('uk')">🇺🇦 Українська</a>
+                <a href="#" onclick="changeLang('ru')">🇷🇺 Русский</a>
+            </div>
+        </div>
 
+        <div id="google_translate_element" style="display:none;"></div>
         <section class="price-section">
             <h1 class="page-title" id="price">Price</h1>
 
@@ -168,6 +179,7 @@
         <button id="scrollTopBtn" title="Remonter en haut">↑</button>
 
         <script src="/assets/js/price.js"></script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     </body>
 
