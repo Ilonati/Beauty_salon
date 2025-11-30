@@ -1,1 +1,1 @@
-Hebergement ```https: //beauty-salon-tyrosse.onrender.com```
+Hebergement front ```https: //beauty-salon-tyrosse.onrender.com```
