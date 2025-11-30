@@ -113,18 +113,18 @@ faqs.forEach((faq) => {
 
 // Burger menu
 
+burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
 
 
-const nav = document.getElementById("nav");
-const closeBtn = document.getElementById("close-btn");
-
-burger.addEventListener("click", () => {
-    nav.classList.add("active");
+    if (nav.classList.contains('active')) {
+        burger.textContent = "✖";
+    } else {
+        burger.textContent = "☰";
+    }
 });
 
-closeBtn.addEventListener("click", () => {
-    nav.classList.remove("active");
-});
+
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');
 
