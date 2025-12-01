@@ -1,47 +1,57 @@
-const db = require("../db");
 const nodemailer = require("nodemailer");
 
-exports.envoyerFormulaire = async (req, res) => {
-    const { nom, prenom, email, telephone, sujet, message } = req.body;
+exports.sendMail = async (req, res) => {
+    const { name, prenom, email, telephone, subject, message } = req.body;
 
     try {
-        //  Enregistrement dans la base
-        const sql = `
-            INSERT INTO formulaire (nom, prenom, email, telephone, sujet, message)
-            VALUES (?, ?, ?, ?, ?, ?)
-        `;
-        await db.query(sql, [nom, prenom, email, telephone, sujet, message]);
-
-        //  Envoi de l’email
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
-            secure: false,
+            service: "gmail",
             auth: {
-                user: process.env.MAIL_USER,
-                pass: process.env.MAIL_PASS
+                user: "beauty.salon.tyrosse@gmail.com",
+                pass: "pzwf hyrp trqy lshy" // пароль приложения Gmail !!!
             }
         });
 
-        await transporter.sendMail({
-            from: `"Beauty Salon" <${process.env.MAIL_USER}>`,
-            to: process.env.MAIL_TO,
-            subject: " Nouveau message du site",
+        // 1️⃣ Письмо, которое получаешь ТЫ
+        const adminMail = {
+            from: `"Beauty Salon" <beauty.salon.tyrosse@gmail.com>`,
+            to: "beauty.salon.tyrosse@gmail.com",
+            subject: `Nouveau message: ${subject}`,
             html: `
-                <h2>Nouveau message reçu</h2>
-                <p><strong>Nom :</strong> ${nom}</p>
-                <p><strong>Prénom :</strong> ${prenom}</p>
-                <p><strong>Email :</strong> ${email}</p>
-                <p><strong>Téléphone :</strong> ${telephone}</p>
-                <p><strong>Sujet :</strong> ${sujet}</p>
-                <p><strong>Message :</strong><br>${message}</p>
-            `
-        });
+                <h2>Nouveau message du site Beauty Salon</h2>
+                <p><b>Nom:</b> ${name}</p>
+                <p><b>Prénom:</b> ${prenom}</p>
+                <p><b>Email:</b> ${email}</p>
+                <p><b>Téléphone:</b> ${telephone}</p>
+                <p><b>Sujet:</b> ${subject}</p>
+                <p><b>Message:</b><br>${message}</p>
+            `,
+        };
 
-        res.json({ success: true, message: "Message envoyé et enregistré" });
+        // 2️⃣ Автоматическое письмо клиенту
+        const clientMail = {
+            from: `"Beauty Salon" <beauty.salon.tyrosse@gmail.com>`,
+            to: email, // email клиента
+            subject: "Votre message a bien été reçu ✔️",
+            html: `
+                <h2>Merci pour votre message !</h2>
+                <p>Bonjour ${prenom},</p>
+                <p>Merci de m’avoir contactée. Votre message a bien été reçu.</p>
+                <p>Je vous répondrai dans les plus brefs délais.</p>
+                <br>
+                <p>Cordialement,</p>
+                <p><b>Beauty Salon Tyrosse</b></p>
+            `,
+        };
 
-    } catch (err) {
-        console.error(" Erreur formulaire:", err);
-        res.status(500).json({ error: "Erreur serveur" });
+        // Отправляем письма
+        await transporter.sendMail(adminMail);   // письмо тебе
+        await transporter.sendMail(clientMail);  // письмо клиенту
+
+        res.status(200).json({ success: true, message: "Email envoyé et confirmation envoyée !" });
+
+    } catch (error) {
+        console.error("Erreur envoi mail:", error);
+        res.status(500).json({ success: false, message: "Erreur serveur", error });
     }
 };

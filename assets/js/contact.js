@@ -84,30 +84,51 @@ scrollBtn.addEventListener('click', () => {
 });
 
 
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const data = {
-        nom: e.target.nom.value,
-        prenom: e.target.prenom.value,
-        email: e.target.email.value,
-        telephone: e.target.telephone.value,
-        sujet: e.target.sujet.value,
-        message: e.target.message.value
+    const formData = {
+        name: document.getElementById("name").value,
+        prenom: document.getElementById("prenom").value,
+        email: document.getElementById("email").value,
+        telephone: document.getElementById("telephone").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
     };
 
-    const res = await fetch("https://beauty-salon-9n0o.onrender.com/formulaireRoutes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    });
+    try {
+        const response = await fetch(" https://beauty-salon-9n0o.onrender.com/formulaireRoutes/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        });
 
-    if (res.ok) {
-        alert("Message envoyé !");
-        e.target.reset();
-    } else {
-        alert("Erreur, réessayez.");
+        const result = await response.json();
+
+        if (result.success) {
+            // Открываем модальное окно
+            document.getElementById("successModal").style.display = "block";
+            // Сбрасываем форму
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("Erreur. Impossible d'envoyer votre message.");
+        }
+
+    } catch (error) {
+        console.error("Erreur:", error);
+        alert("Erreur serveur.");
     }
 });
+
+// Закрытие окна
+document.getElementById("closeModal").onclick = function () {
+    document.getElementById("successModal").style.display = "none";
+};
+
+// Закрытие по клику вне окна
+window.onclick = function (event) {
+    const modal = document.getElementById("successModal");
+    if (event.target === modal) modal.style.display = "none";
+};
 
 
