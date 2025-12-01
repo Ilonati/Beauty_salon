@@ -97,7 +97,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch(" https://beauty-salon-9n0o.onrender.com/formulaireRoutes/send", {
+        const response = await fetch("https://beauty-salon-9n0o.onrender.com/formulaireRoutes/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
@@ -106,9 +106,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
         const result = await response.json();
 
         if (result.success) {
-            // Открываем модальное окно
             document.getElementById("successModal").style.display = "block";
-            // Сбрасываем форму
             document.getElementById("contactForm").reset();
         } else {
             alert("Erreur. Impossible d'envoyer votre message.");
@@ -125,7 +123,6 @@ document.getElementById("closeModal").onclick = function () {
     document.getElementById("successModal").style.display = "none";
 };
 
-// Закрытие по клику вне окна
 window.onclick = function (event) {
     const modal = document.getElementById("successModal");
     if (event.target === modal) modal.style.display = "none";
