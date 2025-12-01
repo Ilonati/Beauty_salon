@@ -8,11 +8,11 @@ exports.sendMail = async (req, res) => {
             service: "gmail",
             auth: {
                 user: "beauty.salon.tyrosse@gmail.com",
-                pass: "pzwf hyrp trqy lshy" // пароль приложения Gmail !!!
+                pass: "pzwf hyrp trqy lshy"
             }
         });
 
-        // 1️⃣ Письмо, которое получаешь ТЫ
+
         const adminMail = {
             from: `"Beauty Salon" <beauty.salon.tyrosse@gmail.com>`,
             to: "beauty.salon.tyrosse@gmail.com",
@@ -28,11 +28,11 @@ exports.sendMail = async (req, res) => {
             `,
         };
 
-        // 2️⃣ Автоматическое письмо клиенту
+
         const clientMail = {
             from: `"Beauty Salon" <beauty.salon.tyrosse@gmail.com>`,
-            to: email, // email клиента
-            subject: "Votre message a bien été reçu ✔️",
+            to: email,
+            subject: "Votre message a bien été reçu ",
             html: `
                 <h2>Merci pour votre message !</h2>
                 <p>Bonjour ${prenom},</p>
@@ -44,9 +44,9 @@ exports.sendMail = async (req, res) => {
             `,
         };
 
-        // Отправляем письма
-        await transporter.sendMail(adminMail);   // письмо тебе
-        await transporter.sendMail(clientMail);  // письмо клиенту
+
+        await transporter.sendMail(adminMail);
+        await transporter.sendMail(clientMail);
 
         res.status(200).json({ success: true, message: "Email envoyé et confirmation envoyée !" });
 

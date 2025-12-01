@@ -1,87 +1,92 @@
-const db = require('../db');
+const {
+    getAllServices,
+    getServiceById,
+    createService,
+    updateService,
+    deleteService
+} = require('../repository/serviceRepository');
 
-
+// GET ALL SERVICES
 exports.getServices = async (req, res) => {
     try {
-        const id_service = req.params.id;
-        let query = 'SELECT * FROM services';
-        let params = [];
-
-        if (id_service) {
-            query += ' WHERE id_service = ?';
-            params.push(id_service);
-        }
-
-        const services = await db.query(query, params);
-        res.json(services);
-
+        const services = await getAllServices();
+        res.status(200).json(services);
     } catch (error) {
-        console.error('Ошибка получения сервисов:', error);
-        res.status(500).json({ message: 'Ошибка сервера', error: error.message });
+        console.error('Erreur getServices:', error);
+        res.status(500).json({ message: 'Erreur serveur', error: error.message });
     }
 };
 
+// GET SERVICE BY ID 
+exports.getService = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const service = await getServiceById(id);
 
+        if (service.length === 0) {
+            return res.status(404).json({ message: 'Service introuvable' });
+        }
+
+        res.status(200).json(service);
+    } catch (error) {
+        console.error('Erreur getService:', error);
+        res.status(500).json({ message: 'Erreur serveur', error: error.message });
+    }
+};
+
+// CREATE SERVICE
 exports.createService = async (req, res) => {
     try {
         const { nom, description, img_url, duree, prix, id_type } = req.body;
 
         if (!nom) {
-            return res.status(400).json({ message: 'Название сервиса обязательно' });
+            return res.status(400).json({ message: 'Le nom du service est requis.' });
         }
 
-        await db.query(
-            'INSERT INTO services (nom, description, img_url, duree, prix, id_type) VALUES (?, ?, ?, ?, ?, ?)',
-            [nom, description, img_url, duree, prix, id_type]
-        );
+        await createService(nom, description, img_url, duree, prix, id_type);
 
-        res.status(201).json({ message: 'Сервис успешно добавлен' });
-
+        res.status(201).json({ message: 'Service ajouté avec succès.' });
     } catch (error) {
-        console.error('Ошибка добавления сервиса:', error);
-        res.status(500).json({ message: 'Ошибка сервера', error: error.message });
+        console.error('Erreur createService:', error);
+        res.status(500).json({ message: 'Erreur serveur', error: error.message });
     }
 };
 
-
+//UPDATE SERVICE
 exports.updateService = async (req, res) => {
     try {
         const { id } = req.params;
         const { nom, description, img_url, duree, prix, id_type } = req.body;
 
-        const existing = await db.query('SELECT * FROM services WHERE id_service = ?', [id]);
+        const existing = await getServiceById(id);
         if (existing.length === 0) {
-            return res.status(404).json({ message: 'Сервис не найден' });
+            return res.status(404).json({ message: 'Service introuvable' });
         }
 
-        await db.query(
-            'UPDATE services SET nom=?, description=?, img_url=?, duree=?, prix=?, id_type=? WHERE id_service=?',
-            [nom, description, img_url, duree, prix, id_type, id]
-        );
+        await updateService(id, nom, description, img_url, duree, prix, id_type);
 
-        res.json({ message: 'Сервис успешно обновлён' });
-
+        res.json({ message: 'Service mis à jour avec succès.' });
     } catch (error) {
-        console.error('Ошибка обновления сервиса:', error);
-        res.status(500).json({ message: 'Ошибка сервера', error: error.message });
+        console.error('Erreur updateService:', error);
+        res.status(500).json({ message: 'Erreur serveur', error: error.message });
     }
 };
 
-
+// DELETE SERVICE
 exports.deleteService = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const existing = await db.query('SELECT * FROM services WHERE id_service = ?', [id]);
+        const existing = await getServiceById(id);
         if (existing.length === 0) {
-            return res.status(404).json({ message: 'Сервис не найден' });
+            return res.status(404).json({ message: 'Service introuvable' });
         }
 
-        await db.query('DELETE FROM services WHERE id_service = ?', [id]);
-        res.json({ message: 'Сервис успешно удалён' });
+        await deleteService(id);
 
+        res.json({ message: 'Service supprimé avec succès.' });
     } catch (error) {
-        console.error('Ошибка удаления сервиса:', error);
-        res.status(500).json({ message: 'Ошибка сервера', error: error.message });
+        console.error('Erreur deleteService:', error);
+        res.status(500).json({ message: 'Erreur serveur', error: error.message });
     }
 };
