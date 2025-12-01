@@ -83,7 +83,7 @@ scrollBtn.addEventListener('click', () => {
     });
 });
 
-
+// formulaire 
 document.getElementById("contactForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -118,7 +118,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     }
 });
 
-// Закрытие окна
+
 document.getElementById("closeModal").onclick = function () {
     document.getElementById("successModal").style.display = "none";
 };
