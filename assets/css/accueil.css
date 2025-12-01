@@ -602,7 +602,7 @@ h1 {
 /* translateMenu */
 .translate-widget {
     position: fixed;
-    top: 50px;
+    top: 40px;
     left: 20px;
     z-index: 500;
     font-family: 'Playfair Display', serif;
