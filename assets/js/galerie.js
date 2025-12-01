@@ -2,10 +2,10 @@ const header = document.querySelector('.header');
 const burger = document.getElementById('burger');
 
 header.addEventListener('click', (e) => {
-    // Если кликнули по бургеру — не переходим на главную
+
     if (e.target === burger) return;
 
-    // Иначе — переходим
+
     window.location.href = 'index.html';
 });
 // Burger menu
@@ -83,13 +83,13 @@ scrollBtn.addEventListener('click', () => {
     });
 });
 
-// Все изображения галереи
+// images
 const images = document.querySelectorAll('.gallery-grid img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCloseBtn = document.getElementById('lightbox-close');
 
-// Создаём стрелки
+
 const prevBtn = document.createElement('div');
 const nextBtn = document.createElement('div');
 prevBtn.className = 'lightbox-prev';
@@ -101,25 +101,24 @@ lightbox.appendChild(nextBtn);
 
 let currentIndex = 0;
 
-// Функция открытия фото
+
 function openLightbox(index) {
     currentIndex = index;
     lightboxImg.src = images[currentIndex].src;
     lightbox.style.display = 'flex';
 }
 
-// Открытие по клику
+
 images.forEach((img, index) => {
     img.addEventListener('click', () => openLightbox(index));
 });
 
-// Закрытие
 lightboxCloseBtn.addEventListener('click', () => (lightbox.style.display = 'none'));
 lightbox.addEventListener('click', e => {
     if (e.target === lightbox) lightbox.style.display = 'none';
 });
 
-// Переключение
+
 function showNext() {
     currentIndex = (currentIndex + 1) % images.length;
     lightboxImg.src = images[currentIndex].src;
@@ -132,7 +131,7 @@ function showPrev() {
 nextBtn.addEventListener('click', showNext);
 prevBtn.addEventListener('click', showPrev);
 
-// Навигация стрелками клавиатуры
+
 document.addEventListener('keydown', e => {
     if (lightbox.style.display === 'flex') {
         if (e.key === 'ArrowRight') showNext();
@@ -140,19 +139,18 @@ document.addEventListener('keydown', e => {
         if (e.key === 'Escape') lightbox.style.display = 'none';
     }
 });
-
-// === АККОРДЕОН ===
+// accordion-title
 const titles = document.querySelectorAll('.accordion-title');
 titles.forEach(title => {
     title.addEventListener('click', () => {
         const content = title.nextElementSibling;
         const isActive = content.classList.contains('active');
 
-        // Закрываем все
+
         document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
         document.querySelectorAll('.accordion-title').forEach(t => t.classList.remove('active'));
 
-        // Если кликнули на неактивный — открыть
+
         if (!isActive) {
             title.classList.add('active');
             content.classList.add('active');
@@ -160,7 +158,7 @@ titles.forEach(title => {
     });
 });
 
-//  Автоматически открыть первую секцию (например, Manucure)
+//  Ouvrir automatiquement la première section (par exemple, Manucure)
 const firstTitle = document.querySelector('.accordion-title');
 if (firstTitle) {
     firstTitle.classList.add('active');

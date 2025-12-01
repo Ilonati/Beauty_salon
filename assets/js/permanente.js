@@ -2,10 +2,10 @@ const header = document.querySelector('.header');
 const burger = document.getElementById('burger');
 
 header.addEventListener('click', (e) => {
-    // Если кликнули по бургеру — не переходим на главную
+
     if (e.target === burger) return;
 
-    // Иначе — переходим
+
     window.location.href = 'index.html';
 });
 // Burger menu
@@ -82,7 +82,7 @@ scrollBtn.addEventListener('click', () => {
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const hash = window.location.hash; // например, #permanente
+    const hash = window.location.hash;
 
     if (hash) {
         const section = document.querySelector(hash);
@@ -90,19 +90,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = section?.querySelector(".accordion-title");
 
         if (accordionContent && title) {
-            // Открываем нужный блок
             accordionContent.style.display = "block";
             accordionContent.classList.add("open");
             title.classList.add("active");
 
-            // Плавно прокручиваем к нужной секции
             setTimeout(() => {
                 section.scrollIntoView({ behavior: "smooth", block: "start" });
             }, 300);
         }
     }
 
-    // Добавляем функционал открытия/закрытия при клике (если его ещё нет)
+
     const titles = document.querySelectorAll(".accordion-title");
     titles.forEach((t) => {
         t.addEventListener("click", () => {
@@ -113,14 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 content.classList.remove("open");
                 t.classList.remove("active");
             } else {
-                // Закрываем остальные
+
                 document.querySelectorAll(".accordion-content.open").forEach((openEl) => {
                     openEl.style.display = "none";
                     openEl.classList.remove("open");
                     openEl.previousElementSibling.classList.remove("active");
                 });
 
-                // Открываем выбранный
+
                 content.style.display = "block";
                 content.classList.add("open");
                 t.classList.add("active");
