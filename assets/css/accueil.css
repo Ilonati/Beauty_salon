@@ -656,7 +656,7 @@ h1 {
     .translate-widget {
         left: auto;
         right: 20px;
-        top: 15px;
+        top: 0;
     }
 
     #translateMenu {
