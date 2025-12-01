@@ -598,6 +598,7 @@ a {
     .translate-widget {
         left: auto;
         right: 20px;
+        top: 0;
     }
 
     #translateMenu {
