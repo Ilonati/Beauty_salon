@@ -87,6 +87,14 @@ CREATE TABLE certificats (
     img_url VARCHAR(255)
 );
 
+CREATE TABLE galerie (
+    id_photo INT AUTO_INCREMENT PRIMARY KEY,
+    categorie ENUM('manicure', 'permanent', 'formation') NOT NULL,
+    img_url VARCHAR(255) NOT NULL,
+    date_ajout TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 DESCRIBE user;
 DELETE FROM user
 WHERE email = 'beauty.salon.tyrosse@gmail.com';

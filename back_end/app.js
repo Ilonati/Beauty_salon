@@ -7,6 +7,7 @@ const app = express();
 
 const adminRoutes = require('./routes/adminRoutes');
 const certificatRoutes = require('./routes/certificatRoutes');
+const galerieRoutes = require('./routes/galerieRoutes');
 const faqRoutes = require('./routes/faqRoutes');
 const formulaireRoutes = require('./routes/formulaireRoutes');
 const serviceRoutes = require('./routes/serviceRoutes');
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 // ROUTES
 app.use('/adminRoutes', adminRoutes);
 app.use('/certificatRoutes', certificatRoutes);
+app.use('/galerieRoutes', galerieRoutes);
 app.use('/faqRoutes', faqRoutes);
 app.use('/formulaireRoutes', formulaireRoutes);
 app.use('/serviceRoutes', serviceRoutes);
@@ -42,6 +44,15 @@ app.use('/typeServiceRoutes', typeServiceRoutes);
 // TEST ROUTES
 app.get('/', (req, res) => {
     res.send('Institut Beauté API is running...');
+});
+// Test DB connection route
+app.get('/api/test-db', async (req, res) => {
+    try {
+        const result = await db.query('SELECT NOW() AS currentTime');
+        res.json({ message: 'Database connected', result });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // SERVER
