@@ -4,6 +4,7 @@ CREATE DATABASE IF NOT EXISTS institut_beauteRomanna;
 SHOW DATABASES;
 USE institut_beauteRomanna;
 
+DROP TABLE IF EXISTS galerie;
 DROP TABLE IF EXISTS certificats;
 DROP TABLE IF EXISTS faq;
 DROP TABLE IF EXISTS services;
@@ -59,17 +60,7 @@ CREATE TABLE services (
         ON UPDATE CASCADE
 );
 
--- TABLE: pricelist 
 
--- CREATE TABLE  pricelist (
---     id_price INT AUTO_INCREMENT PRIMARY KEY,
---     titre VARCHAR(150),                
---     service_name VARCHAR(150),        
---     duree VARCHAR(50) NULL,            
---     prix DECIMAL(10,2) NULL,          
---         ON DELETE SET NULL
---         ON UPDATE CASCADE
--- );
 
 -- TABLE: FAQ 
 

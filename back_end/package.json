@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ilonati.git"
+    "url": "https://github.com/Ilonati/Beauty_salon"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
